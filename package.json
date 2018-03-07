@@ -1,0 +1,33 @@
+{
+  "name": "@pwa/manifest-webpack-plugin",
+  "version": "1.0.0",
+  "description": "My usable node module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragingwind/node-module-boilerplate.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jimmy Moon",
+    "email": "ragingwind@gmail.com",
+    "url": "https://ragingwind.me"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "pretest": "npm run build",
+    "test": "jest"
+  },
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "devDependencies": {
+    "jest": "^22.4.2",
+    "microbundle": "^0.4.4",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.1.0"
+  },
+  "dependencies": {
+    "@pwa/manifest": "^0.2.1"
+  }
+}
