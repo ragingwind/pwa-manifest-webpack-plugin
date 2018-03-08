@@ -1,12 +1,8 @@
 const { join } = require('path')
 const fs = require('fs')
-const build = require('./build')
-const WebpackPlugin = require('../dist/index.js')
+const WebpackPlugin = require('../dist/index.js');
 
 const dest = join(__dirname, '.tmp')
-const src = join(__dirname, 'fixtures')
-
-beforeAll(done => build(dest, src, done))
 
 test('typeof', () => {
   expect(typeof WebpackPlugin).toBe('function')

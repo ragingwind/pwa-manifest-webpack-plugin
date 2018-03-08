@@ -1,6 +1,6 @@
 {
   "name": "@pwa/manifest-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack plugin for Progressive web apps manifest",
   "repository": {
     "type": "git",
@@ -12,10 +12,13 @@
     "email": "ragingwind@gmail.com",
     "url": "https://ragingwind.me"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "pretest": "npm run build",
+    "pretest": "node test/build.js",
     "test": "jest"
   },
   "source": "src/index.js",
