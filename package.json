@@ -1,10 +1,10 @@
 {
   "name": "@pwa/manifest-webpack-plugin",
   "version": "1.0.0",
-  "description": "My usable node module",
+  "description": "webpack plugin for Progressive web apps manifest",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ragingwind/node-module-boilerplate.git"
+    "url": "git+https://github.com/ragingwind/pwa-manifest-webpack-plugin.git"
   },
   "license": "MIT",
   "author": {
