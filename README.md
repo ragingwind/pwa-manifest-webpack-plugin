@@ -1,11 +1,11 @@
-# <%= moduleName %>
+# pwa-manifest-webpack-plugin
 
-> <%= description %>
+> webpack plugin for generating PWA manifest.
 
 # Install
 
 ```sh
-npm install --save-dev <%= moduleName %>
+npm install --save-dev pwa-manifest-webpack-plugin
 ```
 
 # License
