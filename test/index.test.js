@@ -1,34 +1,22 @@
-const {join} = require('path')
-const webpack = require('webpack')
-const rimraf = require('rimraf')
-const WebpackPlugin = require('../dist/index.js');
+const { join } = require('path')
+const fs = require('fs')
+const build = require('./build')
+const WebpackPlugin = require('../dist/index.js')
 
-const tmp = join(__dirname, '.tmp')
+const dest = join(__dirname, '.tmp')
 const src = join(__dirname, 'fixtures')
 
-const build = done => {
-  rimraf(tmp, () => {
-    webpack({
-      entry: `${src}/app.js`,
-      output: {
-        path:tmp,
-        filename:'app.js'
-      },
-      plugins: [
-        new WebpackPlugin()
-      ]
-    }, (err, stats) => {
-      if (err || stats.hasErrors()) {
-        throw err
-      }
-
-      done()
-    })
-  })
-}
-
-beforeAll(done => build(done))
+beforeAll(done => build(dest, src, done))
 
 test('typeof', () => {
   expect(typeof WebpackPlugin).toBe('function')
+})
+
+test('manifest', () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(join(dest, 'manifest.json'))
+  )
+
+  expect(manifest.name).toBe('My PWA')
+  expect(manifest.theme_color).toBe('#000000')
 })
